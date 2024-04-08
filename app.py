@@ -26,3 +26,10 @@ def idades():
     import funcoes
     num = funcoes.maior_de_50(pessoas)
     return jsonify({"status": 200, "data": num})
+
+@app.route("/salarios", methods=("GET",))
+def salarios():
+    from random_data import pessoas
+    import funcoes
+    num = funcoes.mais_2000(pessoas)
+    return jsonify({"status": 200, "data": {"registros": num[2], "porcentagem": num[1], "total": num[0]}})
