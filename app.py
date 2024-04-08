@@ -19,3 +19,10 @@ def argumentos(nome: str):
 @app.route("/argumentos", methods=("GET",))
 def arg_implicito():
     return jsonify({"status": 200, "data": request.args["nome"]})
+
+@app.route("/idades", methods=("GET",))
+def idades():
+    from random_data import pessoas
+    import funcoes
+    num = funcoes.maior_de_50(pessoas)
+    return jsonify({"status": 200, "data": num})
