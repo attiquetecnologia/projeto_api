@@ -3,11 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}"
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}" />
     <title>Dados de API</title>
 </head>
 <body>
     <h1>Site com dados de API</h1>
-    <address>{{ url_for('/') }}</address>
+    <ul>
+        <li><a href="{{ url_for('/') }}"></a></li>
+        <li></li>
+    </ul>
+
+    <div id="authors"></div>
+    <script>
+    function createNode(element) {
+        return document.createElement(element);
+    }
+
+    function append(parent, el) {
+        return parent.appendChild(el);
+    }
+
+    const ul = document.getElementById('authors');
+    const url = 'https://randomuser.me/api/?results=10';
+
+    fetch(url)
+    .then((resp) => resp.json())
+    .then(function(data) {
+    let authors = data.results;
+    return authors.map(function(author) {
+        let li = createNode('li');
+        let img = createNode('img');
+        let span = createNode('span');
+        img.src = author.picture.medium;
+        span.innerHTML = `${author.name.first} ${author.name.last}`;
+        append(li, img);
+        append(li, span);
+        append(ul, li);
+    })
+    }).catch(function(error) {
+        console.log(error);
+    });
+    </script>
 </body>
 </html>
