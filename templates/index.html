@@ -7,13 +7,17 @@
     <title>Dados de API</title>
 </head>
 <body>
+    
     <h1>Site com dados de API</h1>
-    <ul>
-        <li><a href="{{ url_for('/') }}"></a></li>
-        <li></li>
-    </ul>
+    <div class="menu">
+        <div class="menu-item"><a href="{{ url_for('index') }}">Index</a></div>
+        <div class="menu-item"><a href="{{ url_for('api.idades') }}">Idades</a></div>
+        <div class="menu-item"><a href="{{ url_for('api.aleatorios') }}">Aleatorios</a></div>
+        <div class="menu-item"><a href="{{ url_for('api.salarios') }}">Salarios</a></div>
+        <div class="menu-item"><a href="{{ url_for('api.maiores_salarios') }}">Maiores Salarios</a></div>
+    </div>
 
-    <div id="authors"></div>
+    <div id="authors" class="container"></div>
     <script>
     function createNode(element) {
         return document.createElement(element);
