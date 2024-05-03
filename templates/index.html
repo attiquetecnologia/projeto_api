@@ -11,7 +11,7 @@
     <h1>Site com dados de API</h1>
     <div class="menu">
         <div class="menu-item"><a href="{{ url_for('index') }}" aria-disabled="true" id="btn_index" role="button">Index</a></div>
-        <div class="menu-item"><a href="{{ url_for('api.idades') }}" id="btn_idades" role="button">Idades</a></div>
+        <div class="menu-item"><div href="{{ url_for('api.index') }}" aria-disabled="true" id="btn_idades" role="button">Idades</div></div>
         <div class="menu-item"><a href="{{ url_for('api.aleatorios') }}">Aleatorios</a></div>
         <div class="menu-item"><a href="{{ url_for('api.salarios') }}">Salarios</a></div>
         <div class="menu-item"><a href="{{ url_for('api.maiores_salarios') }}">Maiores Salarios</a></div>

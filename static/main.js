@@ -1,12 +1,12 @@
 
 // Events
-document.getElementById("btn_index").addEventListener("click", function(){
+document.getElementById("btn_idades").addEventListener("click", function(){
     console.log(this.href);
+    
     fetch(this.href)
-    .then((resp) => resp.json())
-    .then(function(data) {
-        let authors = data.results;
-        console.log(authors);
+        .then((resp) => resp.json())
+        .then(function(data) {
+            console.log(data);
     }).catch(function(error) {
         console.log(error);
     });
