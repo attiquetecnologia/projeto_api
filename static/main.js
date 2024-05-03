@@ -1,6 +1,16 @@
 
 // Events
-document.getElementById("btn_index").addEventListener("click", index);
+document.getElementById("btn_index").addEventListener("click", function(){
+    console.log(this.href);
+    fetch(this.href)
+    .then((resp) => resp.json())
+    .then(function(data) {
+        let authors = data.results;
+        console.log(authors);
+    }).catch(function(error) {
+        console.log(error);
+    });
+});
 
 function createNode(element) {
     return document.createElement(element);

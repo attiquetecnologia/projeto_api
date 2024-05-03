@@ -23,3 +23,9 @@ body {
 .container {
     margin: 10px;
 }
+
+.container p {
+    font-weight: bold;
+    font-size: 22pt;
+    color: rgb(3, 106, 34);
+}
