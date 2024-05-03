@@ -10,43 +10,14 @@
     
     <h1>Site com dados de API</h1>
     <div class="menu">
-        <div class="menu-item"><a href="{{ url_for('index') }}">Index</a></div>
-        <div class="menu-item"><a href="{{ url_for('api.idades') }}">Idades</a></div>
+        <div class="menu-item"><a href="{{ url_for('index') }}" aria-disabled="true" id="btn_index" role="button">Index</a></div>
+        <div class="menu-item"><a href="{{ url_for('api.idades') }}" id="btn_idades" role="button">Idades</a></div>
         <div class="menu-item"><a href="{{ url_for('api.aleatorios') }}">Aleatorios</a></div>
         <div class="menu-item"><a href="{{ url_for('api.salarios') }}">Salarios</a></div>
         <div class="menu-item"><a href="{{ url_for('api.maiores_salarios') }}">Maiores Salarios</a></div>
     </div>
 
     <div id="authors" class="container"></div>
-    <script>
-    function createNode(element) {
-        return document.createElement(element);
-    }
-
-    function append(parent, el) {
-        return parent.appendChild(el);
-    }
-
-    const ul = document.getElementById('authors');
-    const url = 'https://randomuser.me/api/?results=10';
-
-    fetch(url)
-    .then((resp) => resp.json())
-    .then(function(data) {
-    let authors = data.results;
-    return authors.map(function(author) {
-        let li = createNode('li');
-        let img = createNode('img');
-        let span = createNode('span');
-        img.src = author.picture.medium;
-        span.innerHTML = `${author.name.first} ${author.name.last}`;
-        append(li, img);
-        append(li, span);
-        append(ul, li);
-    })
-    }).catch(function(error) {
-        console.log(error);
-    });
-    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 </html>
