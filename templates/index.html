@@ -10,13 +10,22 @@
     
     <h1>Site com dados de API</h1>
     <div class="menu">
-        <div class="menu-item"><a href="{{ url_for('index') }}" aria-disabled="true" id="btn_index" role="button">Index</a></div>
-        <div class="menu-item"><a href="{{ url_for('api.idades') }}" aria-disabled="true" id="btn_idades" role="button">Idades</a></div>
-        <div class="menu-item"><a href="{{ url_for('api.aleatorios') }}" aria-disabled="true" id="btn_aleatorios">Aleatorios</a></div>
-        <div class="menu-item"><a href="{{ url_for('api.salarios') }}" aria-disabled="true" id="btn_salarios">Salarios</a></div>
-        <div class="menu-item"><a href="{{ url_for('api.maiores_salarios') }}" aria-disabled="true" id="btn_maiores_salarios">Maiores Salarios</a></div>
+        <div class="menu-item"><a href="{{ url_for('index') }}" aria-disabled="true" id="btn_index" class="btn_api" role="button">Index</a></div>
+        <div class="menu-item"><a href="{{ url_for('api.idades') }}" aria-disabled="true" id="btn_idades" class="btn_api" role="button">Idades</a></div>
+        <div class="menu-item"><a href="{{ url_for('api.aleatorios') }}" aria-disabled="true" id="btn_aleatorios" class="btn_api" role="button">Aleatorios</a></div>
+        <div class="menu-item"><a href="{{ url_for('api.salarios') }}" aria-disabled="true" id="btn_salarios" class="btn_api" role="button">Salarios</a></div>
+        <div class="menu-item"><a href="{{ url_for('api.maiores_salarios') }}" aria-disabled="true" id="btn_maiores_salarios" class="btn_api" role="button">Maiores Salarios</a></div>
     </div>
-
+    <div class="container">
+        <h3>Rotas da api</h3>
+        <ul>
+            <li><a href="{{ url_for('api.index') }}">{{ url_for('api.index') }}</a></li>
+            <li><a href="{{ url_for('api.idades') }}" >{{ url_for('api.idades') }}</a></li>
+            <li><a href="{{ url_for('api.aleatorios') }}" >{{ url_for('api.aleatorios') }}</a></li>
+            <li><a href="{{ url_for('api.salarios') }}" >{{ url_for('api.salarios') }}</a></li>
+            <li><a href="{{ url_for('api.maiores_salarios') }}" >{{ url_for('api.maiores_salarios') }}</a></li>
+        </ul>
+    </div>
     <div id="authors" class="container">
         <p>Clique nos links acima para ver esta página mudar sem recarregar</p>
     </div>
