@@ -7,14 +7,13 @@
     <title>Dados de API</title>
 </head>
 <body>
-    
     <h1>Site com dados de API</h1>
     <div class="menu">
-        <div class="menu-item"><a href="{{ url_for('index') }}" aria-disabled="true" id="btn_index" class="btn_api" role="button">Index</a></div>
-        <div class="menu-item"><a href="{{ url_for('api.idades') }}" aria-disabled="true" id="btn_idades" class="btn_api" role="button">Idades</a></div>
-        <div class="menu-item"><a href="{{ url_for('api.aleatorios') }}" aria-disabled="true" id="btn_aleatorios" class="btn_api" role="button">Aleatorios</a></div>
-        <div class="menu-item"><a href="{{ url_for('api.salarios') }}" aria-disabled="true" id="btn_salarios" class="btn_api" role="button">Salarios</a></div>
-        <div class="menu-item"><a href="{{ url_for('api.maiores_salarios') }}" aria-disabled="true" id="btn_maiores_salarios" class="btn_api" role="button">Maiores Salarios</a></div>
+        <div class="menu-item"><a href="{{ url_for('index') }}" target="_blank">Index</a></div>
+        <div class="menu-item"><a href="{{ url_for('api.idades') }}" target="_blank">Idades</a></div>
+        <div class="menu-item"><a href="{{ url_for('api.aleatorios') }}" target="_blank">Aleatorios</a></div>
+        <div class="menu-item"><a href="{{ url_for('api.salarios') }}" target="_blank">Salarios</a></div>
+        <div class="menu-item"><a href="{{ url_for('api.maiores_salarios') }}" target="_blank">Maiores Salarios</a></div>
     </div>
     <div class="container">
         <h3>Rotas da api</h3>
@@ -26,9 +25,20 @@
             <li><a href="{{ url_for('api.maiores_salarios') }}" >{{ url_for('api.maiores_salarios') }}</a></li>
         </ul>
     </div>
+
     <div id="authors" class="container">
         <p>Clique nos links acima para ver esta página mudar sem recarregar</p>
     </div>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-title"><h1>Index API</h1></div>
+            <div class="card-body" id="api-index">
+                <button role="button" onclick="load_data('{{ url_for('api.index')}}', 'api-index')" class="btn_api">Clica</div>
+            </div>
+        </div>
+    </div>
+
     <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 </html>

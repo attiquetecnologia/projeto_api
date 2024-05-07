@@ -6,7 +6,7 @@ bp = Blueprint("api", __name__)
 
 @bp.route("/api", methods=("GET",))
 def index():
-    return jsonify({"status": 200, "message": "API Rodrigo"})
+    return jsonify({"status": 200, "data": "API do Aluno"})
 
 @bp.route("/api/aleatorios", methods=("GET",)) # decorator de rota
 def aleatorios(): # função python
