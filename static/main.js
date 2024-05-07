@@ -26,3 +26,18 @@ function salarios(url, target) {
         console.log(error);
     });
 }
+
+function maiores_salarios(url, target) {
+    fetch(url)
+        .then((resp) => resp.json())
+        .then(function(data) {
+            console.log("Data -> ", data.data);
+            dado = data.data;
+            content =  `<p><strong>Pessoa 1:</strong> ${dado.pessoa1}</p>`;
+            content += `<p><strong>Pessoa 2:</strong> ${dado.pessoa2}</p>`;
+            content += `<p><strong>Pessoa 3:</strong> ${dado.pessoa3}</p>`;
+            document.getElementById(target).innerHTML = content;
+    }).catch(function(error) {
+        console.log(error);
+    });
+}

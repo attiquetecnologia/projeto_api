@@ -23,6 +23,7 @@
             <li><a href="{{ url_for('api.aleatorios') }}" >{{ url_for('api.aleatorios') }}</a></li>
             <li><a href="{{ url_for('api.salarios') }}" >{{ url_for('api.salarios') }}</a></li>
             <li><a href="{{ url_for('api.maiores_salarios') }}" >{{ url_for('api.maiores_salarios') }}</a></li>
+            <li><a href="{{ url_for('api.profissoes') }}" >{{ url_for('api.profissoes') }}</a></li>
         </ul>
     </div>
 
@@ -64,6 +65,19 @@
             <div class="card-body" id="api-salarios"></div>
         </div>
 
+        <div class="card">
+            <div class="card-title"><h1>Maiores Salários</h1></div>
+            <button role="button" onclick="maiores_salarios('{{ url_for('api.maiores_salarios')}}', 'api-maiores_salarios')" class="btn_api">Clica</button>
+            <div class="card-body" id="api-maiores_salarios"></div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title"><h1>Profissões</h1></div>
+            <button role="button" onclick="load_data('{{ url_for('api.profissoes')}}', 'api-profissoes')" class="btn_api">Clica</button>
+            <div class="card-body" id="api-profissoes"></div>
+        </div>
+
+        
     </div> <!-- ./row -->
 
     <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
