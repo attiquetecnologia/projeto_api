@@ -14,12 +14,14 @@
         <div class="menu-item"><a href="{{ url_for('api.aleatorios') }}" target="_blank">Aleatorios</a></div>
         <div class="menu-item"><a href="{{ url_for('api.salarios') }}" target="_blank">Salarios</a></div>
         <div class="menu-item"><a href="{{ url_for('api.maiores_salarios') }}" target="_blank">Maiores Salarios</a></div>
+        <div class="menu-item"><a href="{{ url_for('api.profissoes') }}" target="_blank">Profissões</a></div>
     </div>
     <div class="container">
         <h3>Rotas da api</h3>
         <ul>
             <li><a href="{{ url_for('api.index') }}">{{ url_for('api.index') }}</a></li>
             <li><a href="{{ url_for('api.idades') }}" >{{ url_for('api.idades') }}</a></li>
+            <li><a href="{{ url_for('api.idades', sexo='T') }}" >{{ url_for('api.idades', sexo='T') }}</a></li>
             <li><a href="{{ url_for('api.aleatorios') }}" >{{ url_for('api.aleatorios') }}</a></li>
             <li><a href="{{ url_for('api.salarios') }}" >{{ url_for('api.salarios') }}</a></li>
             <li><a href="{{ url_for('api.maiores_salarios') }}" >{{ url_for('api.maiores_salarios') }}</a></li>
@@ -42,6 +44,7 @@
         <div class="card">
             <div class="card-title"><h1>Idades</h1></div>
             <button role="button" onclick="load_data('{{ url_for('api.idades')}}', 'api-idades')" class="btn_api">Clica</button>
+            <button role="button" onclick="idades_sexo('{{ url_for('api.idades', sexo='T')}}', 'api-idades')" class="btn_api">Clica</button>
             <div class="card-body" id="api-idades"></div>
         </div>
 
@@ -55,7 +58,7 @@
 
         <div class="card">
             <div class="card-title"><h1>Argumentos</h1></div>
-            <button role="button" onclick="load_data('{{ url_for('api.arg_implicito')}}', 'api-arg_implicito')" class="btn_api">Clica</button>
+            <input type="text" placeholder="Digite algo" onkeyup="argumentos('{{ url_for('api.arg_implicito')}}', 'api-arg_implicito', this.value)" class="btn_api">
             <div class="card-body" id="api-arg_implicito"></div>
         </div>
 

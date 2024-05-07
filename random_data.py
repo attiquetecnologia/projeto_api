@@ -3268,7 +3268,7 @@ pessoas = [
         "nome": "Júlio César",
         "idade": 2,
         "sexo": "Masculino",
-        "salario": "9784.58",
+        "salario": "9184.58",
         "profissao": "Orquestrador"
     },
     {
