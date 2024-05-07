@@ -11,3 +11,18 @@ function load_data(url, target) {
         console.log(error);
     });
 }
+
+function salarios(url, target) {
+    fetch(url)
+        .then((resp) => resp.json())
+        .then(function(data) {
+            console.log("Data -> ", data.data);
+            dado = data.data;
+            content = `<p><strong>Registros:</strong> ${dado.registros}</p>`;
+            content += `<p><strong>Registros:</strong> ${dado.porcentagem}%</p>`;
+            content += `<p><strong>Total:</strong> ${dado.total}</p>`;
+            document.getElementById(target).innerHTML = content;
+    }).catch(function(error) {
+        console.log(error);
+    });
+}

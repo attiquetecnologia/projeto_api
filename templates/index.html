@@ -30,14 +30,41 @@
         <p>Clique nos links acima para ver esta página mudar sem recarregar</p>
     </div>
 
-    <div class="container">
+    <div class="container row">
         <div class="card">
             <div class="card-title"><h1>Index API</h1></div>
             <div class="card-body" id="api-index">
-                <button role="button" onclick="load_data('{{ url_for('api.index')}}', 'api-index')" class="btn_api">Clica</div>
+                <button role="button" onclick="load_data('{{ url_for('api.index')}}', 'api-index')" class="btn_api">Clica</button>
             </div>
         </div>
-    </div>
+
+        <div class="card">
+            <div class="card-title"><h1>Idades</h1></div>
+            <button role="button" onclick="load_data('{{ url_for('api.idades')}}', 'api-idades')" class="btn_api">Clica</button>
+            <div class="card-body" id="api-idades"></div>
+        </div>
+
+        <div class="card">
+            <div class="card-title"><h1>Dados Aleatórios</h1></div>
+            <button role="button" onclick="load_data('{{ url_for('api.aleatorios')}}', 'api-aleatorios')" class="btn_api">Clica</button>
+            <div class="card-body" id="api-aleatorios">
+                
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title"><h1>Argumentos</h1></div>
+            <button role="button" onclick="load_data('{{ url_for('api.arg_implicito')}}', 'api-arg_implicito')" class="btn_api">Clica</button>
+            <div class="card-body" id="api-arg_implicito"></div>
+        </div>
+
+        <div class="card">
+            <div class="card-title"><h1>Salarios</h1></div>
+            <button role="button" onclick="salarios('{{ url_for('api.salarios')}}', 'api-salarios')" class="btn_api">Clica</button>
+            <div class="card-body" id="api-salarios"></div>
+        </div>
+
+    </div> <!-- ./row -->
 
     <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
