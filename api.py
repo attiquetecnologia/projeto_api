@@ -60,3 +60,4 @@ def profissoes():
     import funcoes
     profissoes = funcoes.media_profissoes(pessoas)
     return jsonify({"status": 200, "data": profissoes})
+ 
