@@ -51,7 +51,7 @@ function salarios(url, target) {
         console.log(error);
     });
 }
- 
+
 function maiores_salarios(url, target) {
     fetch(url)
         .then((resp) => resp.json())
