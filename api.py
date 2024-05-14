@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-
+ 
 bp = Blueprint("api", __name__)
 
 #Daqui pra baixo as rotas
